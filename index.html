@@ -310,6 +310,14 @@ header {
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
+.anchor-offset {
+  display: block;
+  position: relative;
+  top: -130px; /* adjust depende sa taas ng header mo */
+  visibility: hidden;
+}
+
 </style>
 </head>
 <body>
@@ -323,10 +331,10 @@ header {
         </div>
       </div>
       <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
     </div>
   </header>
 
@@ -336,7 +344,7 @@ header {
       <div class="hero-left">
         <h1>Printing & Tech Solutions!</h1>
         <p>Tarpaulins, business cards, stickers, flyers, shirts, Quality Photo Printing, Laptop Upgrade, Printer Repairs and more. Small runs or bulk orders. We bring your memories to life with vibrant prints while keeping your tech running smoothly.</p>
-        <a class="cta" href="#contact">Request a Quote</a>
+        <a class="cta" href="#quoteForm">Request a Quote</a>
       </div>
       <div class="hero-right">
         <img src="services.png" alt="Sample Printing Service" style="width:100%; height:auto; border-radius:10px;">
@@ -344,8 +352,9 @@ header {
     </section>
 
     <!-- Services -->
-    <section id="services">
-      <h2 style="margin-bottom:8px">Our Services</h2>
+<span id="services" class="anchor-offset"></span>
+<section>
+  <h2 style="margin-bottom:8px">Our Services</h2>
       <p class="small">Popular products — click to see details or to order.</p>
       <div class="grid" style="margin-top:14px">
         <div class="card">
@@ -415,19 +424,25 @@ header {
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" style="margin-top:18px">
-      <h2>About More Prints</h2>
-      <div class="two-col">
-        <div>
-          <p>More Prints has been serving local businesses and students in Cainta and nearby areas with high-quality prints, and friendly service. We focus on affordable pricing without sacrificing quality. Need design help? Our in-house designer can help prepare print ready files.</p>
-          <ul>
-            <li class="small">Fast proofing and confirmation</li>
-            <li class="small">Bulk discounts available</li>
-            <li class="small">Delivery within Rizal (extra fee)</li>
-          </ul>
-        </div>
-        <aside class="card contact-card">
+   <span id="about" class="anchor-offset"></span>
+<section style="margin-top:18px">
+  <h2>About More Prints</h2>
+  <div class="two-col">
+    <div>
+      <p>
+        More Prints has been serving local businesses and students in Cainta and nearby areas
+        with high-quality prints and friendly service. We focus on affordable pricing without
+        sacrificing quality. Need design help? Our in-house designer can help prepare print-ready files.
+      </p>
+      <ul>
+        <li class="small">Fast proofing and confirmation</li>
+        <li class="small">Bulk discounts available</li>
+        <li class="small">Delivery within Rizal (extra fee)</li>
+      </ul>
+    </div>
+
+    <aside class="card contact-card">
+  <span id="contact" class="anchor-offset"></span>
   <h3 style="margin-top:0">Contact & Location</h3>
   <div class="contact-item">
     <strong>📞</strong>
@@ -462,43 +477,63 @@ header {
       </div>
     </section>
 
-    <!-- Contact -->
-<section id="contact" style="margin-top:8px">
+<!-- ✅ Contact form renamed to "quote" -->
+<section id="quote" style="margin-top:8px">
   <h2>Request a Quote</h2>
   <p class="small">Fill out the form or contact us directly via phone or email.</p>
 
-  <form id="quoteForm" class="card" 
-  action="https://formspree.io/f/xqayodpw" 
-  method="POST"
-  style="margin-top:12px;display:grid;gap:10px">
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-    <input type="text" name="name" placeholder="Your name" required 
-      style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)">
-    <input type="email" name="email" placeholder="Email" required 
-      style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)">
-  </div>
-
-  <input type="text" name="product" placeholder="Product (e.g. Business cards)" 
-    style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)">
-
-  <textarea name="details" placeholder="Details (size, qty, finish, deadline)" rows="4" 
-    style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"></textarea>
-
-  <div style="display:flex;gap:8px;align-items:center">
-    <button type="submit" class="cta" style="border:none">Send Request</button>
-    <div class="small">
-      Or email: 
-      <a href="mailto:moreprints03@gmail.com">moreprints03@gmail.com</a>
+  <form
+    id="quoteForm"
+    class="card"
+    action="https://formspree.io/f/xqayodpw"
+    method="POST"
+    style="margin-top:12px;display:grid;gap:10px"
+  >
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+        style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"
+      />
     </div>
-  </div>
 
-  <!-- Message area -->
-  <div id="formMessage" class="small" 
-    style="margin-top:10px;display:none;padding:10px;border-radius:8px;opacity:0;transition:opacity 0.6s ease;">
-  </div>
-</form>
+    <input
+      type="text"
+      name="product"
+      placeholder="Product (e.g. Business cards)"
+      style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"
+    />
 
+    <textarea
+      name="details"
+      placeholder="Details (size, qty, finish, deadline)"
+      rows="4"
+      style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"
+    ></textarea>
+
+    <div style="display:flex;gap:8px;align-items:center">
+      <button type="submit" class="cta" style="border:none">Send Request</button>
+      <div class="small">
+        Or email:
+        <a href="mailto:moreprints03@gmail.com">moreprints03@gmail.com</a>
+      </div>
+    </div>
+
+    <div
+      id="formMessage"
+      class="small"
+      style="margin-top:10px;display:none;padding:10px;border-radius:8px;opacity:0;transition:opacity 0.6s ease;"
+    ></div>
+  </form>
 <script>
   const form = document.getElementById("quoteForm");
   const messageBox = document.getElementById("formMessage");
@@ -619,7 +654,8 @@ window.onclick = function(e) {
 
           const duration = 2000; // 2 seconds slow motion
           const startY = window.scrollY;
-          const targetY = target.getBoundingClientRect().top + window.scrollY;
+          const headerOffset = 100;
+	  const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
           const diff = targetY - startY;
           const startTime = performance.now();
 
